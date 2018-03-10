@@ -1,15 +1,15 @@
-console.log( '1.js');
 
 $(document).ready(readyNow);
 
 function readyNow() {
-  console.log('3.JQ');
-  $('#submit').on('click', someFunction);
-//this will be where we put our mouse clicks - ref color blocks assignment
-}
+appendDom();
+// runEventListeners();
+//   $('#submit').on('click', someFunction);
+// //this will be where we put our mouse clicks - ref color blocks assignment
+// }
 
-function someFunction() {
-console.log('in someFunction');
-}
+function appendDom() {
+console.log('in appendDom');
 
-console.log('2.JS');
+} //end appendDom
+} //end readyNow

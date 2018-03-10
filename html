@@ -2,19 +2,53 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
     <script src="jquery-3.3.1.min.js" charset="utf-8"></script>
   <script src="Weekend_Salary_Calc.js" charset="utf-8"></script>
     <title>Weekend_Salary_Calc</title>
   </head>
   <body>
     <h1>Salary Calculator</h1>
+    <h2>Add Employee</h2>
+      <input type="text" name="First Name" value="First Name">
+      <input type="text" name="Last Name" value="Last Name">
+      <input type="text" name="ID" value="ID">
+      <input type="text" name="Title" value="Title">
+      <input type="text" name="Annual Salary" value="Annual Salary">
+    <button id="submit">Submit</button>
+    <h2>Employees</h2>
     <div class="container">
-      <button id="submit">Submit</button>
-      <tbody>
-
-      </tbody>
-
+      <table>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Annual Salary</th>
+        </tr>
+        <tr>
+          <td>Kerry</td>
+          <td>Burns</td>
+          <td>17</td>
+          <td>Jr. Software Developer</td>
+          <td>$60,000</td>
+        </tr>
+        <tr>
+          <td>Kerry</td>
+          <td>Burns</td>
+          <td>17</td>
+          <td>Sr. Software Developer</td>
+          <td>$80,000</td>
+        </tr>
+        <tr>
+          <td>Kerry</td>
+          <td>Burns</td>
+          <td>17</td>
+          <td>Software Architect</td>
+          <td>$120,000</td>
+        </tr>
+      </table>
+      
     </div>
-
   </body>
 </html>
