@@ -2,6 +2,7 @@
 $(document).ready(readyNow);
 
 function readyNow() {
+//appendDom();
 addClickHandlers();
 
 
@@ -24,7 +25,7 @@ class Employee {
   constructor( first, last, id, title, salary ) {
     this.first = first;
     this.last = last;
-    this.iD = id;
+    this.id = id;
     this.title = title;
     this.salary = salary;
   } //end constructor
@@ -34,5 +35,5 @@ let employees = [];
 
 function newEmployee( first, last, id, title, salary ) {
 console.log('in newEmployee:', first, last, id, title, salary );
-
-}
+employees.push( new Employee( first, last, id, title, salary ) )
+} //end newEmployee
