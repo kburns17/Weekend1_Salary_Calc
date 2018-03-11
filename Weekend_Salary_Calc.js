@@ -2,11 +2,25 @@
 $(document).ready(readyNow);
 
 function readyNow() {
-//appendDom();
+appendDom();
 addClickHandlers();
 
-
 } //end readyNow
+
+
+function appendDom() {
+  console.log('append');
+  let table = $('<table></table>');
+  table.append('<thead><th>First Name</th><th>Last Name</th><th>ID<th>Title</th><th>Annual Salary</th></thead>');
+
+  let tbody = $('<tbody id="tableBody"></tbody>');
+  table.append(tbody);
+
+  $('.container').append(table);
+  $('#tableBody').append('<tr><td>' + first + '</td><td>' + last + '</td><td>' + id + '</td><td>' + title + '</td><td>' + salary + '</td></tr>' );
+
+}//end appendDom
+
 
 function addClickHandlers() {
 $('#submit').on('click', addEmployeeInfo);
@@ -14,9 +28,6 @@ $('#submit').on('click', addEmployeeInfo);
 
 function addEmployeeInfo() {
   console.log('in addEmployeeInfo');
-  let whatTheUserTyped = ($('#firstNameIn').val(), $('#lastNameIn').val());
-console.log('the user typed:', whatTheUserTyped);
-$('.container').append('<td>' + whatTheUserTyped + '<td>');
 
 } //end addEmployeeInfo
 
