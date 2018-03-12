@@ -59,7 +59,7 @@ for (employee of employees) {
 
 
   outputElement.append('<tr><td>' + firstName + '</td><td>' + lastName + '</td><td>' + id + '</td><td>' + title + '</td><td>' + '$' + Number (salary).toFixed(2) + '</td></tr>' );
-  totalSalary += Number (salary);
+  totalSalary += Number (salary)/12;
   }// end loop
   console.log('total salary:', totalSalary);
   updateMonthlyBudget( totalSalary );
@@ -74,7 +74,7 @@ budgetOutput.empty();
 budgetOutput.append('<h2>Total Monthly Budget Remaining: $' + remainingBudget.toFixed(2) + '</h2>')
 if (remainingBudget < 0) {
 budgetOutput.css('color', 'red');
-} // end negative status
+  } // end red color for negative budget
 } // end updateMonthlyBudget
 
 // function newEmployee( first, last, id, title, salary ) {
