@@ -72,7 +72,10 @@ console.log('in remaining budget:', remainingBudget);
 let budgetOutput = $('.totalsalary');
 budgetOutput.empty();
 budgetOutput.append('<h2>Total Monthly Budget Remaining: $' + remainingBudget.toFixed(2) + '</h2>')
-}
+if (remainingBudget < 0) {
+budgetOutput.css('color', 'red');
+} // end negative status
+} // end updateMonthlyBudget
 
 // function newEmployee( first, last, id, title, salary ) {
 // console.log('in newEmployee:', first, last, id, title, salary );
