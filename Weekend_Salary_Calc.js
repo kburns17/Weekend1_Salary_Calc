@@ -8,9 +8,10 @@ class Employee {
     this.salary = salary;
   } //end constructor
 } //end Employee Class
+let monthlyBudget = 20000;
+let newGuy1 = new Employee ('Kerry', 'Burns', 124, 'Jr. Developer', 60000);
+let newGuy2 = new Employee ('Katie', 'Vannelli', 156, 'Digital Specialist', 50000);
 
-let newGuy1 = new Employee ('Kerry', 'Burns', 124, 'Jr. Developer', '$60,000');
-let newGuy2 = new Employee ('Katie', 'Vannelli', 156, 'Digital Specialist', '$50,000');
 let employees = [];
 
 
@@ -28,9 +29,10 @@ function addNewEmployee() {
   //push new employee into array
   employees.push( addEmployee );
   updateTable(); //updates table with employees in array
-}
+} // end addNewEmployee
+
 function appendDom() {
-  console.log('append');
+  console.log('append table');
   let table = $('<table></table>');
   table.append('<thead><th>First Name</th><th>Last Name</th><th>ID<th>Title</th><th>Annual Salary</th></thead>');
 
@@ -38,9 +40,15 @@ function appendDom() {
   table.append(tbody);
 
   $('.container').append(table);
+
 }//end appendDom
 
+
 function updateTable() {
+let totalSalary = 0;
+
+let outputElement = $('#tableBody');
+outputElement.empty();
 
 for (employee of employees) {
   let firstName = employee.first;
@@ -48,12 +56,23 @@ for (employee of employees) {
   let id = employee.id;
   let title = employee.title;
   let salary = employee.salary;
-console.log(employee);
 
-  $('#tableBody').append('<tr><td>' + firstName + '</td><td>' + lastName + '</td><td>' + id + '</td><td>' + title + '</td><td>' + salary + '</td></tr>' );
 
+  outputElement.append('<tr><td>' + firstName + '</td><td>' + lastName + '</td><td>' + id + '</td><td>' + title + '</td><td>' + '$' + Number (salary).toFixed(2) + '</td></tr>' );
+  totalSalary += Number (salary);
   }// end loop
+  console.log('total salary:', totalSalary);
+  updateMonthlyBudget( totalSalary );
 }//end updateTable
+
+function updateMonthlyBudget( allSalaries ) {
+console.log('in updateMonthlyBudget:', allSalaries);
+let remainingBudget = monthlyBudget - allSalaries;
+console.log('in remaining budget:', remainingBudget);
+let budgetOutput = $('.totalsalary');
+budgetOutput.empty();
+budgetOutput.append('<h2>Total Monthly Budget Remaining: $' + remainingBudget.toFixed(2) + '</h2>')
+}
 
 // function newEmployee( first, last, id, title, salary ) {
 // console.log('in newEmployee:', first, last, id, title, salary );
