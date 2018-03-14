@@ -9,6 +9,7 @@ h1{
   text-align: center;
   background-color: steelblue;
   color: white;
+  border: 1px solid black;
 }
 
 table{
